@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import "1bit-ui";
+
+.App {
+  text-align: center;
+  overflow: hidden;
+  font-family: 'Press Start 2P', system-ui;
+  color: var(--bit-color0);
+}
+
+.card-container {
+  display: flex;
+  max-width: 100%;
+  justify-content: center;
+  padding-top: 10em;
+  height: 100vh;
+  width: 100%;
+  background: 
+    repeating-linear-gradient(
+      45deg, 
+      var(--bit-color0) 0, 
+      var(--bit-color0) 32px, 
+      var(--bit-color1) 32px, 
+      var(--bit-color1) 64px
+    );
+}
+.swipe {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  width: 18.75em;
+  height: 30.313em;
+  border: var(--bit-border-width) solid var(--bit-color0);
+  background: var(--bit-color1);
+  border-radius: 1rem;
+}
+.card {
+  font-size: 2em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin: 0.2em;
+}
+
+/* Make it optical center rather than actual center */
+span.spacer:first-child {
+  flex: 1 1 48% ;
+}
+span.spacer:last-child {
+  flex: 1 1 52% ;
+}
+
+.rotate-0 {
+  rotate: -5deg;
+}
+.rotate-1 {
+  rotate: -4deg;
+}
+.rotate-2 {
+  rotate: -3deg;
+}
+.rotate-3 {
+  rotate: -2deg;
+}
+.rotate-4 {
+  rotate: -1deg;
+}
+.rotate-5 {
+  rotate: 0deg;
+}
+.rotate-6 {
+  rotate: 1deg;
+}
+.rotate-7 {
+  rotate: 2deg;
+}
+.rotate-8 {
+  rotate: 3deg;
+}
+.rotate-9 {
+  rotate: 4deg;
+}
+.rotate-10 {
+  rotate: 5deg;
+}
