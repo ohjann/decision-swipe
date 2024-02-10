@@ -11,11 +11,15 @@
     "@types/react-dom": "^18.2.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-grid-system": "^8.1.9",
     "react-scripts": "5.0.1",
     "react-tinder-card": "^1.6.4",
     "sass": "^1.70.0",
     "typescript": "^5.3.3",
     "web-vitals": "^2.1.4"
+  },
+  "overrides": {
+    "typescript": "$typescript"
   },
   "scripts": {
     "start": "react-scripts start",

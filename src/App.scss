@@ -6,6 +6,16 @@
   overflow: hidden;
   font-family: 'Press Start 2P', system-ui;
   color: var(--bit-color0);
+  background: 
+  repeating-linear-gradient(
+    45deg, 
+    var(--bit-color0) 0, 
+    var(--bit-color0) 32px, 
+    var(--bit-color1) 32px, 
+    var(--bit-color1) 64px
+  );
+  height: 100vh;
+  width: 100%;
 }
 
 .card-container {
@@ -13,33 +23,34 @@
   max-width: 100%;
   justify-content: center;
   padding-top: 10em;
-  height: 100vh;
-  width: 100%;
-  background: 
-    repeating-linear-gradient(
-      45deg, 
-      var(--bit-color0) 0, 
-      var(--bit-color0) 32px, 
-      var(--bit-color1) 32px, 
-      var(--bit-color1) 64px
-    );
+
+  .swipe {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    width: 18.75em;
+    height: 30.313em;
+    border: var(--bit-border-width) solid var(--bit-color0);
+    background: var(--bit-color1);
+    border-radius: var(--bit-border-radius);
+  }
+  .card {
+    font-size: 2em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin: 0.2em;
+  }
 }
-.swipe {
-  display: flex;
-  position: absolute;
-  flex-direction: column;
-  width: 18.75em;
-  height: 30.313em;
-  border: var(--bit-border-width) solid var(--bit-color0);
-  background: var(--bit-color1);
-  border-radius: 1rem;
-}
-.card {
-  font-size: 2em;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  margin: 0.2em;
+
+.form-container {
+  .label-col {
+    display: flex;
+    align-items: center;
+  }
+  input {
+    width: 100%;
+  }
 }
 
 /* Make it optical center rather than actual center */

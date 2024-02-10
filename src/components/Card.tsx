@@ -1,29 +1,27 @@
 import React from "react";
 import TinderCard from "react-tinder-card";
 
-const Card = () => {
-  const onSwipe = (direction: string) => {
-    console.log("You swiped: " + direction);
-  };
-
-  const onCardLeftScreen = (myIdentifier: string) => {
-    console.log(myIdentifier + " left the screen");
-  };
-
+const Card = ({
+  option,
+  handleSwipe
+}: {
+  option: string;
+  handleSwipe: Function;
+}) => {
   const selectRandom = (numbers: Number[]) =>
     numbers[Math.floor(Math.random() * numbers.length)];
+  const onSwipe = (direction: string) => handleSwipe(option, direction);
 
   return (
     <TinderCard
       onSwipe={onSwipe}
-      onCardLeftScreen={() => onCardLeftScreen("fooBar")}
       preventSwipe={["up", "down"]}
       className={`swipe rotate-${selectRandom(
         Array.from({ length: 11 }, (_, i) => i)
       )}`}
     >
       <span className="spacer" />
-      <div className="card">Hello, World!</div>
+      <div className="card">{option}</div>
       <span className="spacer" />
     </TinderCard>
   );
