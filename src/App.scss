@@ -44,6 +44,7 @@
 }
 
 .form-container {
+  margin-top: 2em;
   .label-col {
     display: flex;
     align-items: center;
@@ -51,6 +52,10 @@
   input {
     width: 100%;
   }
+}
+
+.results {
+  margin-top: 2em;
 }
 
 /* Make it optical center rather than actual center */
@@ -61,36 +66,8 @@ span.spacer:last-child {
   flex: 1 1 52% ;
 }
 
-.rotate-0 {
-  rotate: -5deg;
-}
-.rotate-1 {
-  rotate: -4deg;
-}
-.rotate-2 {
-  rotate: -3deg;
-}
-.rotate-3 {
-  rotate: -2deg;
-}
-.rotate-4 {
-  rotate: -1deg;
-}
-.rotate-5 {
-  rotate: 0deg;
-}
-.rotate-6 {
-  rotate: 1deg;
-}
-.rotate-7 {
-  rotate: 2deg;
-}
-.rotate-8 {
-  rotate: 3deg;
-}
-.rotate-9 {
-  rotate: 4deg;
-}
-.rotate-10 {
-  rotate: 5deg;
+@for $i from 0 through 10 {
+  .rotate-#{$i} {
+    rotate: -5 + $i + deg;
+  }
 }

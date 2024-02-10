@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { Container, Row, Col } from "react-grid-system";
 import Option from "./Option";
 import useListenForEnterKey from '../hooks/useListenForEnterKey';

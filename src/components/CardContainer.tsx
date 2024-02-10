@@ -16,7 +16,7 @@ const CardContainer = ({ options }: { options: string[] }) => {
 
   if (leftSwipes.length + rightSwipes.length === options.length) {
     return (
-      <Container className="bit-card">
+      <Container className="bit-card results">
         <Row>
           <Col>
             <h2>Left Swipes</h2>
