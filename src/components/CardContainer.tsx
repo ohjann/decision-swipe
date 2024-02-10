@@ -21,8 +21,8 @@ const CardContainer = ({ options }: { options: string[] }) => {
           <Col>
             <h2>Left Swipes</h2>
             <ul>
-              {leftSwipes.map(swipe => (
-                <li>{swipe}</li>
+              {leftSwipes.map((swipe, idx) => (
+                <li key={`${swipe}-${idx}`}>{swipe}</li>
               ))}
             </ul>
           </Col>
@@ -31,8 +31,8 @@ const CardContainer = ({ options }: { options: string[] }) => {
           <Col>
             <h2>Right Swipes</h2>
             <ul>
-              {rightSwipes.map(swipe => (
-                <li>{swipe}</li>
+              {rightSwipes.map((swipe, idx) => (
+                <li key={`${swipe}-${idx}`}>{swipe}</li>
               ))}
             </ul>
           </Col>
