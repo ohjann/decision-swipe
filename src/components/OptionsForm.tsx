@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Container, Row, Col } from "react-grid-system";
 import Option from "./Option";
+import useListenForEnterKey from '../hooks/useListenForEnterKey';
 
 const OptionsForm = ({ onSubmit }: { onSubmit: Function }) => {
   const [options, setOptions] = useState([""]);
 
-  const addOption = () => setOptions([...options, ""]);
+  const addOption = useCallback(() => setOptions([...options, ""]), [
+    setOptions,
+    options
+  ]);
+
+  useListenForEnterKey(addOption);
 
   const removeOption = (idx: number) => () => {
     const opts = [...options];
