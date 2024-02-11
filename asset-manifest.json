@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/decision-swipe/static/css/main.3d8c940f.css",
+    "main.js": "/decision-swipe/static/js/main.89156c1a.js",
+    "static/js/787.ba5b933c.chunk.js": "/decision-swipe/static/js/787.ba5b933c.chunk.js",
+    "index.html": "/decision-swipe/index.html",
+    "main.3d8c940f.css.map": "/decision-swipe/static/css/main.3d8c940f.css.map",
+    "main.89156c1a.js.map": "/decision-swipe/static/js/main.89156c1a.js.map",
+    "787.ba5b933c.chunk.js.map": "/decision-swipe/static/js/787.ba5b933c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3d8c940f.css",
+    "static/js/main.89156c1a.js"
+  ]
+}
