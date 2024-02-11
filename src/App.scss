@@ -43,8 +43,11 @@
   }
 }
 
-.form-container {
+.bit-card {
   margin-top: 2em;
+}
+
+.form-container {
   .label-col {
     display: flex;
     align-items: center;
@@ -52,10 +55,6 @@
   input {
     width: 100%;
   }
-}
-
-.results {
-  margin-top: 2em;
 }
 
 /* Make it optical center rather than actual center */

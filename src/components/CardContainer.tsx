@@ -1,49 +1,54 @@
-import React, { useState } from "react";
-import { Container, Row, Col } from "react-grid-system";
+import React, { Fragment } from "react";
 import Card from "./Card";
+import Results from "./Results";
+import usePlayerState, { Direction } from "../hooks/usePlayerState";
+// import { Direction } from "../hooks/usePlayerState";
 
-const CardContainer = ({ options }: { options: string[] }) => {
-  const [leftSwipes, setLeftSwipes] = useState<string[]>([]);
-  const [rightSwipes, setRightSwipes] = useState<string[]>([]);
+const CardContainer = ({
+  options,
+  players
+}: {
+  options: string[];
+  players: number;
+}) => {
+  const {
+    setPlayerSwipe,
+    getTotalPlayerSwipes,
+    getIntersection
+  } = usePlayerState(players);
 
-  const handleSwipe = (option: string, direction: string) => {
-    if (direction === "left") {
-      setLeftSwipes([...leftSwipes, option]);
-    } else if (direction === "right") {
-      setRightSwipes([...rightSwipes, option]);
-    }
-  };
-
-  if (leftSwipes.length + rightSwipes.length === options.length) {
-    return (
-      <Container className="bit-card results">
-        <Row>
-          <Col>
-            <h2>Left Swipes</h2>
-            <ul>
-              {leftSwipes.map((swipe, idx) => (
-                <li key={`${swipe}-${idx}`}>{swipe}</li>
-              ))}
-            </ul>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <h2>Right Swipes</h2>
-            <ul>
-              {rightSwipes.map((swipe, idx) => (
-                <li key={`${swipe}-${idx}`}>{swipe}</li>
-              ))}
-            </ul>
-          </Col>
-        </Row>
-      </Container>
+  const handleSwipe = (playerNo: number) => (
+    option: string,
+    direction: string
+  ) =>
+    setPlayerSwipe(
+      playerNo,
+      option,
+      Direction[direction as keyof typeof Direction]
     );
+
+  // const complete = leftSwipes.length + rightSwipes.length === options.length;
+  const complete = getTotalPlayerSwipes() === (options.length * players);
+
+  if (complete) {
+    return <Results leftSwipes={getIntersection()} />;
   } else {
     return (
       <div className="card-container">
-        {options.map((option, idx) => (
-          <Card key={idx} option={option} handleSwipe={handleSwipe} />
+        {Array.from({ length: players }, (_, i) => i).map(playerNo => (
+          <Fragment key={`player-stack-${playerNo}`}>
+            {options.map((option, idx) => (
+              <Card
+                key={idx}
+                option={option}
+                handleSwipe={handleSwipe(playerNo)}
+              />
+            ))}
+            <Card
+              option={`Player ${playerNo + 1}`}
+              handleSwipe={handleSwipe(playerNo)}
+            />
+          </Fragment>
         ))}
       </div>
     );

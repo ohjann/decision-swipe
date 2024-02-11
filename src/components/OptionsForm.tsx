@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
 import { Container, Row, Col } from "react-grid-system";
 import Option from "./Option";
-import useListenForEnterKey from '../hooks/useListenForEnterKey';
+import useListenForEnterKey from "../hooks/useListenForEnterKey";
 
 const OptionsForm = ({ onSubmit }: { onSubmit: Function }) => {
   const [options, setOptions] = useState([""]);
@@ -28,8 +28,8 @@ const OptionsForm = ({ onSubmit }: { onSubmit: Function }) => {
   return (
     <Container className="form-container bit-card">
       <h1>Decision App!</h1>
-      <h2>Enter all options you want to decide on</h2>
       <hr className="bit-hr" />
+      <p>Enter all options you want to decide on:</p>
       <Row>
         <Col sm={1} />
         <Col sm={10}>
@@ -44,7 +44,7 @@ const OptionsForm = ({ onSubmit }: { onSubmit: Function }) => {
           ))}
           <Row>
             <Col>
-              <button className="bit-button" onClick={addOption}>
+              <button className="bit-button" onClick={addOption} tabIndex={-1}>
                 +
               </button>
             </Col>
@@ -55,6 +55,11 @@ const OptionsForm = ({ onSubmit }: { onSubmit: Function }) => {
               <button className="bit-button" onClick={() => onSubmit(options)}>
                 Submit
               </button>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <sub>Tip: Use the "Enter" and "Tab" keys to input quickly</sub>
             </Col>
           </Row>
         </Col>
