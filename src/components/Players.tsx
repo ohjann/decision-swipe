@@ -37,7 +37,7 @@ const Players = ({ letsGo, players, setPlayers }: { letsGo: Function, players: n
       <Row>
         <Col sm={10} />
         <Col sm={2}>
-          <button className="bit-button" onClick={() => letsGo()}>
+          <button className="bit-button submit" onClick={() => letsGo()}>
             Let's Go
           </button>
         </Col>

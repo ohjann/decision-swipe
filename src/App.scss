@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import "1bit-ui";
 
+body {
+  margin: 0;
+}
+
 .App {
   text-align: center;
   overflow: hidden;
@@ -37,7 +41,6 @@
   .card {
     font-size: 2em;
     text-align: center;
-    display: flex;
     align-items: center;
     margin: 0.2em;
   }
@@ -55,6 +58,12 @@
   input {
     width: 100%;
   }
+  .option {
+    margin: 1em 0;
+  }
+}
+.submit {
+  margin: 1em 0;
 }
 
 /* Make it optical center rather than actual center */

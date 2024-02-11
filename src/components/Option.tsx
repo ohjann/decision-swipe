@@ -29,10 +29,10 @@ const Option = ({
   };
   return (
     <Row className="option">
-      <Col sm={2} className="label-col">
+      <Col md={2} className="label-col">
         <label htmlFor="field-name">Option {number}</label>
       </Col>
-      <Col sm={8}>
+      <Col md={8} xs={9}>
         <input
           className="bit-input"
           id="field-name"
@@ -42,7 +42,7 @@ const Option = ({
           ref={ref}
         />
       </Col>
-      <Col sm={2}>
+      <Col md={2} xs={1}>
         <button
           className="bit-button"
           onClick={() => removeOption(number - 1)}

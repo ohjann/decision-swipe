@@ -50,9 +50,9 @@ const OptionsForm = ({ onSubmit }: { onSubmit: Function }) => {
             </Col>
           </Row>
           <Row>
-            <Col sm={10} />
-            <Col sm={2}>
-              <button className="bit-button" onClick={() => onSubmit(options)}>
+            <Col md={10} sm={8}/>
+            <Col md={2} sm={2} >
+              <button className="bit-button submit" onClick={() => onSubmit(options)}>
                 Submit
               </button>
             </Col>
