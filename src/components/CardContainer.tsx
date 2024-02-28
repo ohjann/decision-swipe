@@ -30,7 +30,7 @@ const CardContainer = ({
   const complete = getTotalPlayerSwipes() === (options.length * players);
 
   if (complete) {
-    return <Results leftSwipes={getIntersection()} />;
+    return <Results rightSwipes={getIntersection()} />;
   } else {
     return (
       <div className="card-container">
@@ -49,6 +49,7 @@ const CardContainer = ({
             />
           </Fragment>
         ))}
+        <sub className="tip">Left: No  Right: Yes</sub>
       </div>
     );
   }

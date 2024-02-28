@@ -1,17 +1,17 @@
 import React from "react";
 import { Container, Row, Col } from "react-grid-system";
 
-const Results = ({ leftSwipes }: { leftSwipes: string[] }) => {
+const Results = ({ rightSwipes }: { rightSwipes: string[] }) => {
   return (
     <Container className="bit-card results">
-      {leftSwipes.length ? (
+      {rightSwipes.length ? (
         <>
           <h2>You all agreed on:</h2>
           <Row>
             <Col md={4} />
             <Col md={4}>
               <ul>
-                {leftSwipes.map((swipe, idx) => (
+                {rightSwipes.map((swipe, idx) => (
                   <li key={`${swipe}-${idx}`}>{swipe}</li>
                 ))}
               </ul>

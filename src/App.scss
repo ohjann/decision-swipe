@@ -56,6 +56,40 @@ ol {
     text-align: center;
     align-items: center;
     margin: 0.2em;
+    word-break: break-word;
+  }
+  .tip {
+    position: fixed;
+    bottom: 1em;
+    background: var(--bit-color0);
+    color: var(--bit-color1);
+    padding: 1em;
+    clip-path: polygon(
+      0px calc(100% - 12px),
+      4px calc(100% - 12px),
+      4px calc(100% - 8px),
+      8px calc(100% - 4px),
+      12px calc(100% - 4px),
+      12px 100%,
+      calc(100% - 12px) 100%,
+      calc(100% - 12px) calc(100% - 4px),
+      calc(100% - 8px) calc(100% - 4px),
+      calc(100% - 4px) calc(100% - 8px),
+      calc(100% - 4px) calc(100% - 12px),
+      100% calc(100% - 12px),
+      100% 12px,
+      calc(100% - 4px) 12px,
+      calc(100% - 4px) 8px,
+      calc(100% - 8px) 4px,
+      calc(100% - 12px) 4px,
+      calc(100% - 12px) 0px,
+      12px 0px,
+      12px 4px,
+      8px 4px,
+      4px 8px,
+      4px 12px,
+      0px 12px
+    );;
   }
 }
 

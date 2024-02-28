@@ -48,8 +48,8 @@ const usePlayerState = (numberOfPlayers: number) => {
   };
 
   const getIntersection = (): string[] => {
-    const leftSwipes = playerState.map(p => p.leftSwipes);
-    return leftSwipes.reduce((acc, arr) =>
+    const rightSwipes = playerState.map(p => p.rightSwipes);
+    return rightSwipes.reduce((acc, arr) =>
       acc.filter(value => arr.includes(value))
     );
   };
