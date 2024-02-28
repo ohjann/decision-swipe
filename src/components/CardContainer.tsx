@@ -27,7 +27,6 @@ const CardContainer = ({
       Direction[direction as keyof typeof Direction]
     );
 
-  // const complete = leftSwipes.length + rightSwipes.length === options.length;
   const complete = getTotalPlayerSwipes() === (options.length * players);
 
   if (complete) {
@@ -35,7 +34,7 @@ const CardContainer = ({
   } else {
     return (
       <div className="card-container">
-        {Array.from({ length: players }, (_, i) => i).map(playerNo => (
+        {Array.from({ length: players }, (_, i) => i).reverse().map(playerNo => (
           <Fragment key={`player-stack-${playerNo}`}>
             {options.map((option, idx) => (
               <Card

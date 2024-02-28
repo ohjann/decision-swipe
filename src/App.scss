@@ -21,13 +21,16 @@ body {
   color: var(--bit-color0);
   height: 100vh;
   width: 100%;
+  overflow: auto;
 }
 
 .card-container {
   display: flex;
-  max-width: 100%;
+  width: 100vw;
+  height: calc(100vh - 10em);
   justify-content: center;
   padding-top: 10em;
+  overflow: hidden;
 
   .swipe {
     display: flex;
