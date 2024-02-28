@@ -34,14 +34,9 @@ const Players = ({ letsGo, players, setPlayers }: { letsGo: Function, players: n
         </Col>
         <Col sm={4} />
       </Row>
-      <Row>
-        <Col sm={10} />
-        <Col sm={2}>
-          <button className="bit-button submit" onClick={() => letsGo()}>
-            Let's Go
-          </button>
-        </Col>
-      </Row>
+      <button className="bit-button submit full-width" onClick={() => letsGo()}>
+        Let's Go
+      </button>
     </Container>
   );
 };

@@ -3,21 +3,22 @@
 
 body {
   margin: 0;
+  background: 
+    repeating-linear-gradient(
+      45deg, 
+      var(--bit-color0) 0, 
+      var(--bit-color0) 32px, 
+      var(--bit-color1) 32px, 
+      var(--bit-color1) 64px
+    ) !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
 }
 
 .App {
   text-align: center;
-  overflow: hidden;
   font-family: 'Press Start 2P', system-ui;
   color: var(--bit-color0);
-  background: 
-  repeating-linear-gradient(
-    45deg, 
-    var(--bit-color0) 0, 
-    var(--bit-color0) 32px, 
-    var(--bit-color1) 32px, 
-    var(--bit-color1) 64px
-  );
   height: 100vh;
   width: 100%;
 }
@@ -72,6 +73,10 @@ span.spacer:first-child {
 }
 span.spacer:last-child {
   flex: 1 1 52% ;
+}
+
+.bit-button.full-width {
+  width: 100%;
 }
 
 @for $i from 0 through 10 {

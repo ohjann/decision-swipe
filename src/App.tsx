@@ -31,7 +31,7 @@ const App = () => {
     [options]
   );
   return (
-    <div className="App bit-root">
+    <div className="App">
       {page === 1 ? (
         <Instructions gotIt={() => setPage(2)} />
       ) : page === 2 ? (

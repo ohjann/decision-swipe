@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-grid-system";
 
 const Instructions = ({ gotIt }: { gotIt: Function }) => {
   return (
-    <Container fluid={true} className="bit-card">
+    <Container className="bit-card">
       <h1>Decision App!</h1>
       <hr className="bit-hr" />
       <Row>
@@ -17,7 +17,7 @@ const Instructions = ({ gotIt }: { gotIt: Function }) => {
         </Col>
         <Col sm={3} />
       </Row>
-      <button className="bit-button" onClick={() => gotIt()}>
+      <button className="bit-button full-width" onClick={() => gotIt()}>
         Got it
       </button>
     </Container>
