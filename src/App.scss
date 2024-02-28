@@ -13,6 +13,11 @@ body {
     ) !important;
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
+  filter: blur(.2px);
+  animation-duration: 0.01s;
+  animation-name: textflicker;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .App {
@@ -70,6 +75,12 @@ ol {
     margin: 1em 0;
   }
 }
+button, input {
+  animation-duration: 0.01s;
+  animation-name: textflicker;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
 .submit {
   margin: 1em 0;
 
@@ -96,5 +107,43 @@ span.spacer:last-child {
 @for $i from 0 through 10 {
   .rotate-#{$i} {
     rotate: -5 + $i + deg;
+  }
+}
+
+.crt:after {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,1), #ffffff, #ffffff);
+  background-size: cover;
+  background-size: 100% 4px;
+  opacity: 0.1;
+  background-position: 0 0;
+  pointer-events: none;
+}
+
+@media screen{
+  .crt:after {
+    animation: scanlines infinite 155s linear ;
+  }
+} 
+@keyframes scanlines {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -100vh;
+  }
+}
+
+@keyframes textflicker {
+  from {
+    text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+  }
+  to {
+    text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
   }
 }

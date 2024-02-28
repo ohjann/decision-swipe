@@ -31,7 +31,7 @@ const App = () => {
     [options]
   );
   return (
-    <div className="App">
+    <div className="App crt">
       {page === 1 ? (
         <Instructions gotIt={() => setPage(2)} />
       ) : page === 2 ? (
