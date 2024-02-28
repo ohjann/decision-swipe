@@ -18,7 +18,7 @@ const App = () => {
   setConfiguration({ maxScreenClass: "lg" });
   const [options, setOptions] = useState<string[]>([]);
   const [page, setPage] = useState<number>(1);
-  const [players, setPlayers] = useState<number>(1);
+  const [players, setPlayers] = useState<number>(2);
   const onSubmit = (opts: string[]) => {
     setOptions(shuffleArray(opts));
   };

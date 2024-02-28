@@ -25,6 +25,13 @@ const OptionsForm = ({ onSubmit }: { onSubmit: Function }) => {
     setOptions(opts);
   };
 
+  const handleSubmit = () => {
+    const filteredOptions = options.filter(o => o && o !== "");
+    if (filteredOptions.length > 1) {
+      onSubmit(filteredOptions);
+    }
+  };
+
   return (
     <Container className="form-container bit-card">
       <h1>Decision App!</h1>
@@ -50,10 +57,12 @@ const OptionsForm = ({ onSubmit }: { onSubmit: Function }) => {
             </Col>
           </Row>
           <button
-            className="bit-button submit full-width"
-            onClick={() => onSubmit(options)}
+            className={`bit-button submit full-width ${
+              options.filter(o => o && o !== "").length < 2 ? "inadequate" : ""
+            }`}
+            onClick={handleSubmit}
           >
-            Submit
+            <span>Submit</span>
           </button>
           <Row>
             <Col>

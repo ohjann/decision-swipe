@@ -16,7 +16,7 @@ const Players = ({ letsGo, players, setPlayers }: { letsGo: Function, players: n
         <Col sm={1}>
           <button
             className="bit-button"
-            onClick={() => setPlayers(players - 1)}
+            onClick={() => setPlayers(Math.max(players - 1, 2))}
           >
             -
           </button>
